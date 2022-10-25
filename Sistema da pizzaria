@@ -1,4 +1,4 @@
-Algoritmo  "PIZZARIA ANXZ"
+Algoritmo  "PIZZARIA UNIZX"
 Var
 nome: vetor[0..6] de caractere
 telefone: vetor[0..6] de inteiro
