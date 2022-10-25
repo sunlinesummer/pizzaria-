@@ -1,0 +1,144 @@
+Algoritmo  "PIZZARIA ANXZ"
+Var
+nome: vetor[0..6] de caractere
+telefone: vetor[0..6] de inteiro
+opt, nome: caractere
+i, j, s: inteiro
+op:inteiro
+endereco:caracter
+continuar,produto:caractere
+valoruni,valorporprodunit,totpedido:real
+quantidade:inteiro
+fim:caracter
+procedimento principal()
+
+Inicio
+
+ENQUANTO opt <> "4" faca
+ escreval("------------------------------------------")
+ escreval("-------------------MENU-------------------")
+ escreval("------------------------------------------")
+ escreval("")
+ escreval(" (1) Cadastrar Novo Usuário")
+ escreval(" (2) Cardapio")
+ escreval(" (3) Pedido")
+ escreval(" (4)Sair do Sistema ")
+ escreva("Digite a opção: ")
+ leia (opt)
+ se opt="1" entao
+   limpatela
+   se s=10 entao
+   escreval("Esgotado o limite de cadastros")
+   escreval()
+   senao
+   cadastro_usuario()
+   fimse
+   fimse
+ se opt="2" entao
+ escreva("pizza de frango com capitury----- $17,00")
+leia(op)
+escreva("pizza portuguesa ----- $15,00")
+leia(op)
+escreva ("pizza espanhola ----- $25,00")
+leia(op)
+escreva ("pizza mussarela ----- $24,00")
+leia(op)
+escreva ("pizza peruana ----- $26,00")
+leia(op)
+escreva ("pizza italiana ----- $24,00")
+leia(op)
+   limpatela
+    fimse
+    
+    
+    
+   se opt="3" entao
+   limpatela
+   totpedido <-0
+continuar <- "n"
+escreval("----------------------Pedido----------------------")
+escreval("  ")
+escreva("Deseja fazr um pedido ? s/n -> ")
+leia(continuar)
+enquanto (continuar ="s") faca
+   escreval("  ")
+   escreval ("Digite o produto desejado -> ")
+   leia(produto)
+   escreval("Qual é o valor unitário do produto ? -> R$")
+   leia (valoruni)
+   escreval ("Quantidade -> ")
+   leia(quantidade)
+   valorporprodunit <- valoruni*quantidade //soma total do valor de um item da lista recebe o preço unitario vezes a quantidade desejada
+   totpedido <- totpedido + valorporprodunit // total de pedido recebe ele mesmo "0" mais a soma total do valor de um item da lista
+   escreval("  ")
+   escreval("_________________________________________________________________")
+   escreval("Deseja incluir outro item ? s/n ")
+   leia(continuar)
+fimenquanto
+escreval("  ")
+escreval("O valor total de pedidos é -> R$",totpedido)
+escreval()
+
+limpatela
+ escreval("Qual é sua forma de pagamento?")
+ escreval("1 = Cartão | 2 = Dinheiro | 3 = Pix")
+ fimse
+ leia(fim)
+ 
+
+
+ 
+ fimprocedimento
+ 
+ procedimento cardapio()
+ inicio
+ se opt="4" entao
+   para i de 0 ate 3 faca
+    nomes[i]<-"xpto"
+    fimpara
+    limpatela
+    escreval("Aplicação Encerrada, Volte Sempre.")
+   fimse
+fimprocedimento
+
+procedimento cadastro_usuario()
+inicio
+ para i de 0 ate 4 faca
+  se(nomes[i]="") entao
+   escreva("Nome: ")
+   leia(nomes[i])
+   escreva("Telefone: ")
+   leia(telefone[i])
+   escreva("Endereço: ")
+   leia(endereco[i])
+   escreval()
+   escreva("Cadastro feito com sucesso!")
+   escreval()
+   retorna_menu()
+   s <- s+1
+   limpatela
+   fimse
+  fimpara
+ escreval("Esgotado o limite de cadastros")
+ escreval()
+fimprocedimento
+
+procedimento retorna_menu()
+inicio
+escreval("Deseja Retornar ao Menu")
+escreval("S = SIM | N = NÃO")
+leia (opt)
+ se opt = "S" entao
+  i <- i+1
+  limpatela
+  principal()
+  senao
+  limpatela
+  cadastro_usuario()
+  fimse
+fimprocedimento
+
+inicio
+  principal()
+fimenquanto
+Fimalgoritmo
